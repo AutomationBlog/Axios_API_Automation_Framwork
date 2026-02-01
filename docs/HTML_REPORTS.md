@@ -3,26 +3,27 @@
 ## Overview
 
 The framework includes advanced HTML reporting with multiple formats:
+
 1. **jest-html-reporter** - Clean, single-page report
 2. **jest-html-reporters** - Detailed multi-page report
 3. **Enhanced Custom Report** - Interactive report with filtering and search
 
 ## Features
 
-✅ **Interactive Dashboard** - Visual summary with statistics
-✅ **Search & Filter** - Find tests quickly
-✅ **Collapsible Test Suites** - Organize results efficiently
-✅ **Pass Rate Visualization** - Progress bars and charts
-✅ **Export Functionality** - Download results as JSON
-✅ **Dark Mode Support** - Automatic theme detection
-✅ **Keyboard Shortcuts** - Fast navigation
-✅ **Responsive Design** - Works on all devices
+- ✅ **Interactive Dashboard** - Visual summary with statistics
+- ✅ **Search & Filter** - Find tests quickly
+- ✅ **Collapsible Test Suites** - Organize results efficiently
+- ✅ **Pass Rate Visualization** - Progress bars and charts
+- ✅ **Export Functionality** - Download results as JSON
+- ✅ **Dark Mode Support** - Automatic theme detection
+- ✅ **Keyboard Shortcuts** - Fast navigation
+- ✅ **Responsive Design** - Works on all devices
 
 ## Generated Reports
 
 After running tests, you'll find reports in the `/reports` directory:
 
-```
+```bash
 reports/
 ├── test-report.html           # Main HTML report (jest-html-reporter)
 ├── html-report/
@@ -35,11 +36,13 @@ reports/
 ## Running Tests with Reports
 
 ### Generate all reports
+
 ```bash
 npm test
 ```
 
 ### Generate and open reports
+
 ```bash
 npm run test:report
 npm run report:open
@@ -48,6 +51,7 @@ npm run report:open
 ### View specific report types
 
 The test run automatically generates:
+
 - Console output (default Jest reporter)
 - HTML report at `reports/test-report.html`
 - Detailed report at `reports/html-report/detailed-report.html`
@@ -58,6 +62,7 @@ The test run automatically generates:
 ### 1. Summary Dashboard
 
 The report header shows:
+
 - Total number of tests
 - Passed/Failed counts
 - Pass rate percentage
@@ -67,11 +72,13 @@ The report header shows:
 ### 2. Interactive Filtering
 
 **Filter Buttons:**
+
 - All Tests - Show all test results
 - Passed - Show only passing tests
 - Failed - Show only failing tests
 
 **Search Bar:**
+
 - Real-time search across test names
 - Keyboard shortcut: `Ctrl/Cmd + F`
 - Clear with `ESC` key
@@ -79,6 +86,7 @@ The report header shows:
 ### 3. Test Suite Organization
 
 Each test suite displays:
+
 - Suite name and file path
 - Number of passed/failed tests
 - Individual test cases with status
@@ -88,14 +96,17 @@ Each test suite displays:
 ### 4. Visual Elements
 
 **Progress Bars:**
+
 - Overall pass rate visualization
 - Color-coded success/failure indicators
 
 **Status Icons:**
+
 - ✓ Green checkmark for passed tests
 - ✗ Red cross for failed tests
 
 **Color Coding:**
+
 - Green - Successful tests
 - Red - Failed tests
 - Blue - Overall statistics
@@ -105,6 +116,7 @@ Each test suite displays:
 
 **Export JSON:**
 Click the "Export Results" button to download test data as JSON:
+
 ```json
 {
   "timestamp": "2024-01-30T12:00:00.000Z",
@@ -131,12 +143,14 @@ Click the "Export Results" button to download test data as JSON:
 ### Custom Styles
 
 Edit `/reports/custom-report-style.css` to customize:
+
 - Colors and themes
 - Layout and spacing
 - Font sizes and families
 - Dark mode colors
 
 Example:
+
 ```css
 :root {
   --primary-color: #4CAF50;
@@ -148,6 +162,7 @@ Example:
 ### Custom Scripts
 
 Edit `/reports/custom-report-script.js` to add:
+
 - New filtering options
 - Additional charts
 - Custom export formats
@@ -193,6 +208,7 @@ stage('Test') {
 ### Locally
 
 Open any report file in your browser:
+
 ```bash
 # macOS
 open reports/test-report.html
@@ -223,16 +239,19 @@ npx http-server reports
 ## Troubleshooting
 
 ### Reports not generating
+
 - Ensure tests are running: `npm test`
 - Check `reports/` directory exists
 - Verify `jest.config.js` has reporters configured
 
 ### Styles not applying
+
 - Check `custom-report-style.css` path in `jest.config.js`
 - Verify CSS file exists in `/reports` directory
 - Clear browser cache
 
 ### Interactive features not working
+
 - Check `custom-report-script.js` path
 - Verify JavaScript file exists
 - Check browser console for errors
@@ -260,6 +279,7 @@ reporters: [
 ### Available Options
 
 **jest-html-reporter:**
+
 - `pageTitle` - Report title
 - `outputPath` - Output file path
 - `theme` - Theme (defaultTheme/darkTheme)
@@ -268,6 +288,7 @@ reporters: [
 - `dateFormat` - Date format string
 
 **jest-html-reporters:**
+
 - `publicPath` - Output directory
 - `filename` - Report filename
 - `expand` - Auto-expand test suites
@@ -288,6 +309,7 @@ reporters: [
 ### Trend Analysis
 
 Keep historical reports to track:
+
 - Pass rate trends
 - Test execution time
 - Flaky test detection
@@ -296,6 +318,7 @@ Keep historical reports to track:
 ### Screenshot Integration
 
 Add screenshots to failed tests:
+
 ```javascript
 // In your test
 if (testFailed) {
@@ -306,6 +329,7 @@ if (testFailed) {
 ### Email Reports
 
 Send reports via email:
+
 ```bash
 # Using mailx
 cat reports/test-report.html | mailx -s "Test Report" team@example.com
@@ -314,6 +338,7 @@ cat reports/test-report.html | mailx -s "Test Report" team@example.com
 ## Support
 
 For issues or questions about HTML reports:
+
 1. Check the troubleshooting section
 2. Review Jest documentation
 3. Check reporter plugin documentation
