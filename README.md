@@ -19,7 +19,7 @@ A comprehensive end-to-end API testing framework built with Axios, Jest, and Joi
 
 ## Project Structure
 
-```
+```bash
 api-e2e-testing-framework/
 ├── reports/
 |   ├── test-report.html           # Main HTML report (jest-html-reporter)
@@ -54,13 +54,13 @@ api-e2e-testing-framework/
 npm install
 ```
 
-2. Create a `.env` file from the example:
+2.Create a `.env` file from the example:
 
 ```bash
 cp .env.example .env
 ```
 
-3. Update the `.env` file with your API configuration:
+3.Update the `.env` file with your API configuration:
 
 ```env
 BASE_URL=https://jsonplaceholder.typicode.com
@@ -72,32 +72,38 @@ TEST_ENV=staging
 ## Running Tests
 
 ### Run all tests
+
 ```bash
 npm test
 ```
 
 ### Run tests in watch mode
+
 ```bash
 npm run test:watch
 ```
 
 ### Run tests with coverage
+
 ```bash
 npm run test:coverage
 ```
 
 ### Run specific test suites
+
 ```bash
 npm run test:smoke
 npm run test:regression
 ```
 
 ### Generate HTML reports
+
 ```bash
 npm run test:report
 ```
 
 ### Open HTML report in browser
+
 ```bash
 npm run report:open
 ```
@@ -115,6 +121,7 @@ The framework generates beautiful, interactive HTML reports with:
 - ⌨️ **Keyboard Shortcuts** - Fast navigation
 
 **Report Locations:**
+
 - Main report: `reports/test-report.html`
 - Detailed report: `reports/html-report/detailed-report.html`
 - Enhanced report: `reports/enhanced-report.html`
@@ -242,6 +249,7 @@ The framework includes custom Jest matchers:
 - `toHaveProperty(propertyPath)` - Assert object has nested property
 
 Example:
+
 ```javascript
 expect(response).toHaveStatusCode(200);
 expect(response).toBeValidJson();
@@ -253,11 +261,13 @@ expect(response.data).toHaveProperty('user.address.city');
 Set authentication token in two ways:
 
 ### Via Environment Variables
+
 ```env
 AUTH_TOKEN=your_token_here
 ```
 
 ### Programmatically
+
 ```javascript
 const apiClient = new ApiClient();
 apiClient.setAuthToken('your_token_here');
@@ -307,15 +317,19 @@ const schemas = {
 ## Troubleshooting
 
 ### Tests timing out
+
 Increase the timeout in `jest.config.js`:
+
 ```javascript
 testTimeout: 60000
 ```
 
 ### Network errors
+
 Check your `.env` file has the correct `BASE_URL`
 
 ### Schema validation failing
+
 Review the schema definition and ensure it matches the API response structure
 
 ## Contributing
