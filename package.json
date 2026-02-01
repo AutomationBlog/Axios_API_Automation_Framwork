@@ -8,8 +8,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:smoke": "jest --testPathPattern=smoke",
-    "test:regression": "jest --testPathPattern=regression",
-    "test:report": "jest --runInBand && node src/utils/generateReport.js",
+    "test:regression:report": "jest --testPathPattern=regression && npm run report",
+    "test:report": "jest --runInBand && npm run report",
+    "report": "node src/utils/generateReport.js",
     "report:open": "open ./reports/html-report/detailed-report.html || xdg-open ./reports/html-report/detailed-report.html || start ./reports/html-report/detailed-report.html"
   },
   "keywords": [
