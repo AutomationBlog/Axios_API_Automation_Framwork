@@ -21,11 +21,19 @@ A comprehensive end-to-end API testing framework built with Axios, Jest, and Joi
 
 ```
 api-e2e-testing-framework/
+├── reports/
+|   ├── test-report.html           # Main HTML report (jest-html-reporter)
+|   ├── html-report/
+|   │   └── detailed-report.html   # Detailed report (jest-html-reporters)
+|   ├── enhanced-report.html       # Custom enhanced report
+|   ├── custom-report-style.css    # Custom styling
+|   └── custom-report-script.js    # Interactive features
 ├── src/
 │   ├── client/
 │   │   └── apiClient.js          # Axios client configuration
 │   └── utils/
 │       ├── assertions.js          # Custom assertion helpers
+│       ├── generateReport.js      # Custom report generator
 │       ├── schemaValidator.js     # Joi schema validators
 │       └── testDataFactory.js     # Test data generators
 ├── tests/
